@@ -42,11 +42,16 @@ form.addEventListener("submit", (e) => {
   e.preventDefault();
   let name1 = document.getElementById("u1").value.toLowerCase();
   let name2 = document.getElementById("u2").value.toLowerCase();
+  let name11 = document.getElementById("b1").value.toLowerCase();
+  let name22 = document.getElementById("b2").value.toLowerCase();
   let com = document.getElementsByClassName("com")[0];
   let text = document.getElementsByClassName("text")[0];
 
-  let result = Math.round((find(name1, name2) + find(name2, name1)) / 2);
-
+  let result = find(name1, name2) + find(name2, name1);
+  if (name11 && name22) {
+    result += find(name11, name22) + find(name22, name11);
+    result /= 4;
+  } else result /= 2;
   if (result > 79) {
     text.style.color = "blueviolet";
     com.style.color = "blueviolet";
@@ -68,5 +73,5 @@ form.addEventListener("submit", (e) => {
     com.style.color = "maroon";
     com.innerHTML = "Definitely a bad couple.";
   }
-  text.innerHTML = "Result: " + result + "%";
+  text.innerHTML = "Result: " + Math.round(result) + "%";
 });

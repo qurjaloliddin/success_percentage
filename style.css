@@ -33,13 +33,21 @@ input {
   border-radius: 20px;
   color: darkblue;
 }
-#u1 {
+#u1,
+#b1 {
   background-color: rgb(224, 255, 255, 0.7);
 }
-#u2 {
+#u2,
+#b2 {
   border-color: lightcoral !important;
   background-color: rgba(255, 182, 193, 0.7);
   color: rgb(100, 0, 0);
+  margin-bottom: 20px;
+}
+#b1,
+#b2 {
+  font-size: 1.8vw;
+  height: 8vh;
 }
 
 button {
